@@ -1,27 +1,27 @@
-import React from "react";
-import './customInput.css';
+import React, { useState } from "react";
+import "./customInput.css";
 
-class CustomInput extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            isEmpty: 'Поле пустое. Заполните пожалуйста'
-        }
-    }
+const CustomInput = (props) => {
+  const [state] = useState({ isEmpty: "Поле пустое. Заполните пожалуйста" });
 
-    render() {
-        const {type, name, onChange, state, label, value, placeholder, isSubmited} = this.props;
-        return(
-            <><label className="inputLabel">{label}</label><input
-                type={type}
-                onChange={onChange}
-                name={name}
-                value={state[name]}
-                placeholder={placeholder}
-                className="inputItem" /><div className="error">{state.errors[name]}</div><span className="error">{value === '' && isSubmited === true ? this.state.isEmpty : ''}</span></>
-            
-        )
-    }
-}
+  const { type, name, onChange, valueState, label, value, errors, isSubmited } =
+    props;
+  return (
+    <label className="labelForInput">
+      {label}
+      <input
+        type={type}
+        onChange={onChange}
+        name={name}
+        value={valueState[name]}
+        className="inputItem"
+      />
+      <div className="error">{errors[name]}</div>
+      <span className="error">
+        {value === "" && isSubmited === true ? state.isEmpty : ""}
+      </span>
+    </label>
+  );
+};
 
 export default CustomInput;

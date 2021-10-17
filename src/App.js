@@ -1,51 +1,53 @@
-import Form from './components/form/form';
-import React from 'react';
-import { Tamplate } from './components/tamplate/tamplate';
-import './App.css';
+import Form from "./components/form/form";
+import React, { useState } from "react";
+import { Tamplate } from "./components/tamplate/tamplate";
+import "./App.css";
 
-class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      showModal: false,
-    }
-  }
+const App = (props) => {
+  const [state, setState] = useState({ showModal: false });
 
-  changeState = (state) => {
-    this.setState({
+  const changeState = (state) => {
+    setState({
       ...state,
       showModal: true,
-    })
-  }
+    });
+  };
 
-  backToForm = () => {
-    this.setState({
+  const backToForm = () => {
+    setState({
       showModal: false,
-    })
-  }
+    });
+  };
 
-  render() {
-    if(this.state.showModal) {
-      const {firstName, lastName, date, phone, link, about, stack, project, showModal} = this.state;
-      return(
-        <Tamplate firstName = {firstName}
-        lastName = {lastName}
-        date = {date}
-        phone = {phone}
-        link = {link}
-        about = {about}
-        stack = {stack}
-        project = {project}
-        backToForm = {this.backToForm}
-        showModal = {showModal}        
-        />
-      )
-    }
-
+  if (state.showModal) {
+    const {
+      firstName,
+      lastName,
+      date,
+      phone,
+      link,
+      about,
+      stack,
+      project,
+      showModal,
+    } = state;
     return (
-      <Form changeState={this.changeState}/>
-     );
+      <Tamplate
+        firstName={firstName}
+        lastName={lastName}
+        date={date}
+        phone={phone}
+        link={link}
+        about={about}
+        stack={stack}
+        project={project}
+        backToForm={backToForm}
+        showModal={showModal}
+      />
+    );
   }
-}
+
+  return <Form changeState={changeState} />;
+};
 
 export default App;
