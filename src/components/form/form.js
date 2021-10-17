@@ -190,7 +190,7 @@ countSymbols = (e) => {
                        label="Фамилия:"
                        placeholder="Введите фамилию..."
                        isSubmited={this.state.isSubmited}
-                       value={this.state.firstName}/>
+                       value={this.state.lastName}/>
 
                 <CustomInput type={'date'}
                        name="date"
@@ -198,7 +198,7 @@ countSymbols = (e) => {
                        state={this.state}
                        label="Дата рождения:"
                        isSubmited={this.state.isSubmited}
-                       value={this.state.firstName}/>
+                       value={this.state.date}/>
 
                 <CustomInput type={'phone'}
                        name="phone"
@@ -207,7 +207,7 @@ countSymbols = (e) => {
                        label="Телефон:"
                        placeholder="Введите номер телефона..."
                        isSubmited={this.state.isSubmited}
-                       value={this.state.firstName}/>
+                       value={this.state.phone}/>
                 
                 <CustomInput type={'text'}
                        name="link"
@@ -216,7 +216,7 @@ countSymbols = (e) => {
                        label="Сайт:"
                        placeholder="Введите адрес сайта..."                    
                        isSubmited={this.state.isSubmited}
-                       value={this.state.firstName}/>
+                       value={this.state.link}/>
      
                 <CustomTextarea rows="5"
                           name="about"
@@ -226,7 +226,7 @@ countSymbols = (e) => {
                           label="О себе:"
                           placeholder="Напишите о себе..."
                           isSubmited={this.state.isSubmited}
-                          value={this.state.firstName}/>
+                          value={this.state.about}/>
 
                 <CustomTextarea rows="5"
                           name="stack"
@@ -236,7 +236,7 @@ countSymbols = (e) => {
                           label="Стек технологий:"
                           placeholder="Напишите технологии..."
                           isSubmited={this.state.isSubmited}
-                          value={this.state.firstName}/>
+                          value={this.state.stack}/>
 
                 <CustomTextarea rows="5"
                           name="project"
@@ -246,7 +246,7 @@ countSymbols = (e) => {
                           label="Описание последнего проекта:"
                           placeholder="Опишите ваш последний проект..."
                           isSubmited={this.state.isSubmited}
-                          value={this.state.firstName}/>
+                          value={this.state.project}/>
 
                 
                 <ul className="btns">
