@@ -18,8 +18,7 @@ class Form extends React.Component {
             isSubmited: false,
             counterTextarea: 600,
             maxCounter: 600,
-            errors: {
-            }
+            errors: ''
         }
 
     }
@@ -158,8 +157,7 @@ countSymbols = (e) => {
                 isEmpty: '',
                 counterTextarea: 600,
                 maxCounter: 600,
-                errors: {
-                }
+                errors: ''
             }
         )
     }
